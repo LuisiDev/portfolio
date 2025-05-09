@@ -19,8 +19,13 @@ const isTouchDevice = () => {
 };
 //move
 const move = (e) => {
-  cursorX = !isTouchDevice() ? e.clientX : e.touches[0].clientX;
-  cursorY = !isTouchDevice() ? e.clientY : e.touches[0].clientY;
+  if (!isTouchDevice()) {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+  } else if (e.touches && e.touches.length > 0) {
+    cursorX = e.touches[0].clientX;
+    cursorY = e.touches[0].clientY;
+  }
   cursor.style.left = `${cursorX}px`;
   cursor.style.top = `${cursorY}px`;
 };

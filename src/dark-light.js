@@ -1,95 +1,98 @@
 import { ANIMATIONS } from './animation-toggle.js';
-import Prism from 'prismjs'
 
-// Obtener el tema actual desde localStorage o usar 'light' por defecto
-let currentTheme = localStorage.getItem('theme') || 'light';
+// Función para inicializar el tema
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  let theme = 'light';
+  if (savedTheme) {
+    theme = savedTheme;
+  } else if (systemPrefersDark) {
+    theme = 'dark';
+  }
+  
+  applyTheme(theme);
+  return theme;
+}
 
-// Aplicar el tema guardado al cargar la página
-document.documentElement.className = currentTheme;
+// Función para aplicar el tema
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+}
 
-// Crear un elemento de estilo para inyectar CSS
-let styleElement = document.createElement('style');
+// Inicializar tema
+let currentTheme = initTheme();
+
+// Elemento para animaciones CSS
+const styleElement = document.createElement('style');
 document.head.appendChild(styleElement);
-
-let activeButton = null;
 
 const injectCSS = (css) => {
   styleElement.textContent = css;
 };
 
-const SWITCH = (button, animation) => {
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  button.setAttribute("aria-pressed", newTheme === 'dark');
-  document.documentElement.className = newTheme;
-  currentTheme = newTheme;
-  localStorage.setItem('theme', newTheme); // Guardar el tema en localStorage
-  injectCSS(animation.css);
-};
-
-const updateButtonStates = () => {
-  document.querySelectorAll('.theme-toggle').forEach(btn => {
-    if (btn === activeButton) {
-      btn.disabled = false;
-      btn.setAttribute("aria-pressed", currentTheme === 'dark');
-    } else {
-      btn.disabled = currentTheme === 'dark';
-      btn.setAttribute("aria-pressed", "false");
-    }
-  });
-};
-
-const TOGGLE_THEME = (button, animation) => {
-  if (activeButton && activeButton !== button) {
-    return; // Si hay un botón activo y no es este, no hacer nada
-  }
-
-  if (!document.startViewTransition) {
-    SWITCH(button, animation);
-    activeButton = currentTheme === 'dark' ? button : null;
-    updateButtonStates();
-  } else {
-    const transition = document.startViewTransition(() => {
-      SWITCH(button, animation);
-      activeButton = currentTheme === 'dark' ? button : null;
-    });
-    transition.finished.then(() => {
-      updateButtonStates();
-    });
-  }
-};
-
-const getAnimationByName = (name) => {
-  return ANIMATIONS.find(animation => animation.name === name);
-};
-
-// Usar delegación de eventos en el cuerpo del documento
-document.body.addEventListener('click', (event) => {
-  if (event.target.classList.contains('theme-toggle') && !event.target.disabled) {
-    const animationName = event.target.dataset.animation;
-    const animation = getAnimationByName(animationName);
+// Función para cambiar el tema
+const toggleTheme = (button, animation) => {
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  localStorage.setItem('theme', newTheme);
+  
+  const applyThemeChange = () => {
+    applyTheme(newTheme);
+    currentTheme = newTheme;
     
     if (animation) {
-      TOGGLE_THEME(event.target, animation);
-    } else {
-      console.warn(`Animation "${animationName}" not found for button:`, event.target);
+      injectCSS(animation.css);
     }
+    
+    updateButtonState(button, newTheme);
+  };
+
+  if (document.startViewTransition) {
+    document.startViewTransition(() => {
+      applyThemeChange();
+    });
+  } else {
+    applyThemeChange();
   }
+};
+
+// Actualizar estado del botón
+function updateButtonState(button, theme) {
+  button.setAttribute('aria-pressed', theme === 'dark');
+  // No necesitamos updateButtonIcon ya que usaremos el SVG animado original
+}
+
+// Inicialización
+document.addEventListener('DOMContentLoaded', () => {
+  const themeButtons = document.querySelectorAll('.theme-toggle');
+  
+  themeButtons.forEach(button => {
+    updateButtonState(button, currentTheme);
+    
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const animationName = button.dataset.animation;
+      const animation = ANIMATIONS.find(a => a.name === animationName);
+      toggleTheme(button, animation);
+    });
+  });
+  
+  // Escuchar cambios en la preferencia del sistema
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      currentTheme = e.matches ? 'dark' : 'light';
+      applyTheme(currentTheme);
+      document.querySelectorAll('.theme-toggle').forEach(btn => {
+        updateButtonState(btn, currentTheme);
+      });
+    }
+  });
 });
-
-// Contenedores de demostración
-const DEMO_CONTAINER = document.getElementById("demo-container");
-
-ANIMATIONS.forEach((animation) => {
-  const button = document.createElement("button");
-  button.setAttribute("aria-pressed", "false");
-  button.className = "theme-toggle";
-  button.dataset.animation = animation.name;
-  button.textContent = animation.name;
-  DEMO_CONTAINER.appendChild(button);
-});
-
-// Configuración inicial del estado del botón
-updateButtonStates();
-
-// Aplicar el tema guardado al cargar la página
-document.documentElement.className = currentTheme;
