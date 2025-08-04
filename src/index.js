@@ -10,6 +10,7 @@ import './dark-light.js';
 import './animation-toggle.js';
 import 'prismjs';
 import 'prismjs/themes/prism.css';
+import './animation-logo.js';
 
 // Aquí puedes agregar la lógica de tu portafolio
 document.addEventListener('DOMContentLoaded', () => {
