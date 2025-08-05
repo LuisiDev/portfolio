@@ -4,6 +4,31 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @custom-variant light (&:where([data-theme=light], [data-theme=light] *));
 
+/* Loading screen */
+#loading-screen {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.6s;
+}
+.welcome-text {
+  opacity: 0;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  position: absolute;
+  transition: opacity 0.7s;
+  text-align: center;
+  width: 100vw;
+  left: 0;
+}
+
 /* logo font */
 .logo {
   font-family: "Playfair Display", serif;
@@ -51,7 +76,7 @@ body {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 9999;
-  
+
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease;
   mix-blend-mode: difference;
@@ -68,19 +93,13 @@ body {
   z-index: 9998;
 
   transform: translate(-50%, -50%);
-  transition: 
-    transform 0.2s ease-out,
-    width 0.3s ease,
-    height 0.3s ease;
+  transition: transform 0.2s ease-out, width 0.3s ease, height 0.3s ease;
   mix-blend-mode: difference;
 }
 
-
-  body * {
-    cursor: none !important;
-  }
-
-
+body * {
+  cursor: none !important;
+}
 
 /* Estilos para cuando está sobre elementos interactivos */
 .interactive-hover ~ #cursor-border {

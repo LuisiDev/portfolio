@@ -13,8 +13,8 @@ import 'prismjs/themes/prism.css';
 import './animation-logo.js';
 
 // Aquí puedes agregar la lógica de tu portafolio
-document.addEventListener('DOMContentLoaded', () => {
-    const app = document.createElement('div');
-    app.innerHTML = '<h1>Bienvenido a mi portafolio</h1>';
-    document.body.appendChild(app);
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     const app = document.createElement('div');
+//     app.innerHTML = '<h1>Bienvenido a mi portafolio</h1>';
+//     document.body.appendChild(app);
+// });
