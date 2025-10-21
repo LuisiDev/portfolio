@@ -1,0 +1,161 @@
+/* Estilos para Smooth Scroll con GSAP */
+
+/* Contenedor principal para smooth scroll */
+#smooth-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+#smooth-content {
+  will-change: transform;
+}
+
+/* Cursor personalizado - configuración correcta */
+#cursor,
+#cursor-border {
+  position: fixed !important;
+  pointer-events: none !important;
+  z-index: 10000;
+  transform: translate(-50%, -50%) !important;
+}
+
+#cursor {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  z-index: 10001 !important;
+}
+
+#cursor-border {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  mix-blend-mode: difference;
+  transition: all 0.2s ease-out;
+  z-index: 10000 !important;
+}
+
+/* Estados del cursor */
+#cursor.hover {
+  transform: translate(-50%, -50%) scale(1.5) !important;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#cursor-border.hover {
+  transform: translate(-50%, -50%) scale(1.2) !important;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Asegurar que elementos fuera del smooth scroll tengan z-index alto */
+#loading-screen {
+  position: fixed;
+  z-index: 10002;
+  pointer-events: none;
+}
+
+/* Navegación debe estar por encima del smooth scroll */
+nav {
+  position: fixed !important;
+  z-index: 1000 !important;
+  pointer-events: auto !important;
+}
+
+/* Asegurar que los enlaces de navegación sean clickeables */
+nav a {
+  position: relative;
+  z-index: 1001;
+  pointer-events: auto;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Elementos que se animan al hacer scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(100px);
+  will-change: transform, opacity;
+}
+
+/* Optimizaciones de rendimiento */
+.parallax-element {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth scroll para navegadores que no soportan GSAP */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto; /* GSAP manejará el smooth scroll */
+  }
+}
+
+/* Para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  #smooth-wrapper,
+  #smooth-content {
+    overflow: visible;
+  }
+  
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  #smooth-wrapper {
+    overflow-y: auto; /* Fallback para móviles */
+  }
+}
+
+/* Indicador de progreso de scroll (opcional) */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Efectos de hover mejorados para navegación */
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
