@@ -19,7 +19,8 @@
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
     "prismjs": "^1.30.0",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.7.10",

@@ -43,14 +43,14 @@ function initSmoothScroll() {
         ignoreMobileResize: true, // Ignora cambios de tamaño en móviles
         onUpdate: self => {
             // Asegurar que elementos fijos mantengan su posición
-            const nav = document.querySelector('nav');
+            // const nav = document.querySelector('nav');
             const cursor = document.getElementById('cursor');
             const cursorBorder = document.getElementById('cursor-border');
             
-            if (nav) {
-                nav.style.position = 'fixed';
-                nav.style.zIndex = '1000';
-            }
+            // if (nav) {
+            //     nav.style.position = 'fixed';
+            //     nav.style.zIndex = '1000';
+            // }
             
             if (cursor) {
                 cursor.style.position = 'fixed';

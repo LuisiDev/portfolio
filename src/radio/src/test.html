@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="styles/main.css" />
+
+<style>
+/* Base para que las variables tengan un valor inicial */
+.bento-item {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+/* El resplandor (Glow) que sigue al ratón */
+.bento-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Puedes cambiar el color rgba(255,255,255, 0.08) a un azul cian rgba(0, 255, 255, 0.1) si lo quieres más cybernetic */
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Evita que el resplandor bloquee los clics */
+  z-index: 1;
+}
+
+/* Muestra el resplandor solo al hacer hover */
+.bento-item:hover::before {
+  opacity: 1;
+}
+</style>
+
+<section class="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4 md:p-8 font-sans">
+    <div class="w-full max-w-6xl z-10">
+        <h1 class="text-4xl sm:text-5xl font-bold text-white text-center mb-8">Core Features</h1>
+        
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-4 auto-rows-[200px] gap-4">
+            
+            <!-- Item 1 -->
+            <div class="bento-item col-span-1 md:col-span-2 md:row-span-2 flex flex-col justify-between bg-neutral-900/50 border border-white/10 rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-white">Real-time Analytics</h2>
+                    <p class="mt-2 text-gray-400">Monitor your application's performance with up-to-the-second data streams and visualizations.</p>
+                </div>
+                <div class="mt-4 h-48 bg-neutral-800/50 rounded-lg border border-white/5 flex items-center justify-center text-gray-500 relative z-10">
+                    <!-- Icono de Lucide (Opcional) -->
+                    <i data-lucide="bar-chart-3" class="w-8 h-8 mr-2 opacity-50"></i>
+                    Chart Placeholder
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bento-item bg-neutral-900/50 border border-white/10 rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <i data-lucide="globe" class="w-6 h-6 text-blue-400 mb-3"></i>
+                    <h2 class="text-xl font-bold text-white">Global CDN</h2>
+                    <p class="mt-2 text-gray-400 text-sm">Deliver content at lightning speed, no matter where your users are.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bento-item bg-neutral-900/50 border border-white/10 rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-green-400 mb-3"></i>
+                    <h2 class="text-xl font-bold text-white">Secure Auth</h2>
+                    <p class="mt-2 text-gray-400 text-sm">Enterprise-grade authentication and user management built-in.</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="bento-item md:row-span-2 bg-neutral-900/50 border border-white/10 rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <i data-lucide="database-backup" class="w-6 h-6 text-purple-400 mb-3"></i>
+                    <h2 class="text-xl font-bold text-white">Automated Backups</h2>
+                    <p class="mt-2 text-gray-400 text-sm">Your data is always safe with automated, redundant backups.</p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="bento-item col-span-1 md:col-span-2 bg-neutral-900/50 border border-white/10 rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <i data-lucide="zap" class="w-6 h-6 text-yellow-400 mb-3"></i>
+                    <h2 class="text-xl font-bold text-white">Serverless Functions</h2>
+                    <p class="mt-2 text-gray-400 text-sm">Run your backend code without managing servers. Scale infinitely with ease.</p>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="bento-item bg-neutral-900/50 border border-white/10 rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <i data-lucide="terminal" class="w-6 h-6 text-orange-400 mb-3"></i>
+                    <h2 class="text-xl font-bold text-white">CLI Tool</h2>
+                    <p class="mt-2 text-gray-400 text-sm">Manage your entire infrastructure from the command line.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Script para los iconos (Lucide) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleccionamos todas las tarjetas Bento
+    const bentoItems = document.querySelectorAll('.bento-item');
+
+    bentoItems.forEach(item => {
+        item.addEventListener('mousemove', (e) => {
+            // Obtenemos las dimensiones y posición de la tarjeta
+            const rect = item.getBoundingClientRect();
+            
+            // Calculamos la posición del ratón relativa a la tarjeta
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Inyectamos las coordenadas en el CSS
+            item.style.setProperty('--mouse-x', `${x}px`);
+            item.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+});
+</script>

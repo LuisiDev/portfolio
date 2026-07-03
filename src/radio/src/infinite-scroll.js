@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const scrollTexts = document.getElementById('scroll-about-texts');
+    if (!scrollTexts) return;
     const scrollSpeed = 1; // Velocidad del scroll (ajusta según sea necesario)
 
     // Duplica el contenido si no es suficiente para llenar el contenedor

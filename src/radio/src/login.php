@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | TCS Radio</title>
+    <title>Login | Luis Flores</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="img/logo-b.svg" type="image/x-icon">
     <style>
@@ -34,7 +34,7 @@
                                 d="M95 313.564L95 36.4355L335.001 175L95 313.564Z" stroke-width="15" />
                         </svg>
 
-                        <p class="w-28 text-lg ml-2 text-gray-700 dark:text-gray-200">TCS Radio</p>
+                        <p class="w-28 text-lg ml-2 text-gray-700 dark:text-gray-200">Luis Flores</p>
                     </div>
 
                     <div class="hidden justify-center flex" id="loginValidation" role="alert">

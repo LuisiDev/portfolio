@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
     const canvas = document.querySelector('.background-canvas');
+    if (!canvas) return;
     const gl = canvas.getContext("webgl");
     if (!gl) {
       console.error("WebGL not supported");

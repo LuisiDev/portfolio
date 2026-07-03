@@ -1,6 +1,7 @@
 // Este archivo es el punto de entrada de la aplicación. Aquí puedes importar módulos, inicializar tu aplicación y manejar la lógica de JavaScript.
 import 'flowbite';
 import 'flowbite/dist/flowbite.min.css';
+import { initMagicBento } from './magic-bento.js';
 import './styles/main.css';
 import './styles/input.css';
 import './styles/smooth-scroll.css';
@@ -14,6 +15,10 @@ import 'prismjs/themes/prism.css';
 import './animation-logo.js';
 import './smooth-scroll.js';
 import './login.js';
+const playballFont = document.createElement('link');
+playballFont.rel = 'stylesheet';
+playballFont.href = 'https://fonts.googleapis.com/css2?family=Playball&display=swap';
+document.head.appendChild(playballFont);
 
 // Aquí puedes agregar la lógica de tu portafolio
 // document.addEventListener('DOMContentLoaded', () => {
@@ -21,3 +26,6 @@ import './login.js';
 //     app.innerHTML = '<h1>Bienvenido a mi portafolio</h1>';
 //     document.body.appendChild(app);
 // });
+document.addEventListener('DOMContentLoaded', () => {
+    initMagicBento('.magic-bento-card');
+});
