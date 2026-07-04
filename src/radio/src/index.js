@@ -15,6 +15,8 @@ import 'prismjs/themes/prism.css';
 import './animation-logo.js';
 import './smooth-scroll.js';
 import './login.js';
+import './styles/card-swiper.css';
+import './card-swiper.js';
 const playballFont = document.createElement('link');
 playballFont.rel = 'stylesheet';
 playballFont.href = 'https://fonts.googleapis.com/css2?family=Playball&display=swap';

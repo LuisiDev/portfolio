@@ -853,7 +853,7 @@
             </svg>
           </div>
 
-          <div id="about-content" class="relative inset-0 z-20 flex flex-col items-center justify-center text-center text-shadow-lg px-4 mt-12 md:mt-16 tracking-wide">\
+          <div id="about-content" class="relative inset-0 z-20 flex flex-col items-center justify-center text-center text-shadow-lg px-4 mt-12 md:mt-16 tracking-wide">
             <h2 class="text-5xl md:text-8xl lg:text-9xl bg-gradient-to-tl from-white via-slate-400 to-slate-600 bg-clip-text text-transparent font-bold">
               Luis Flores
             </h2>
@@ -1028,17 +1028,12 @@
               </div>
             </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 text-wrap">
+          <div class="grid grid-cols-2 sm:grid-cols-2 text-wrap">
             <div class="mt-6 sm:w-full lg:w-3/4">
               <p class="text-gray-600 dark:text-gray-400 text-justify indent-8">I’m a software developer engineer with a solid technical background and excellent project management, planning, and development skills. My ability to manage multiple projects simultaneously was demonstrated during my professional practices and work at various companies, where I contributed to projects that benefited both the organizations and my own skill set. Moreover, I possess fluent English conversational skills, developed through interactions both at the University and within professional environments. Additionally, I greatly enjoy learning and discovering new technologies within the world of programming. I have the ability to work in a team, support, and propose new efficient ideas for the company and projects.</p>
-              <p class="text-lg font-semibold text-gray-800 dark:text-gray-300 mt-4">My documents</p>
               <div>
-                <ul class="list-disc pl-5 text-gray-600 dark:text-gray-400">
-                  <li><a href="./docs/CV_Luis_Flores.pdf" target="_blank" class="text-blue-500 hover:underline">Curriculum Vitae</a></li>
-                  <li><a href="./docs/Portfolio_Luis_Flores.pdf" target="_blank" class="text-blue-500 hover:underline">Associate's Degree</a></li>
-                  <li><a href="./docs/Portfolio_Luis_Flores.pdf" target="_blank" class="text-blue-500 hover:underline">Bachelor's Degree</a></li>
-                  <li><a href="./docs/Certificados_Luis_Flores.pdf" target="_blank" class="text-blue-500 hover:underline">Certificates</a></li>
-                </ul>
+                <p class="text-lg font-semibold text-gray-800 dark:text-gray-300 mt-4">Experience</p>
+                <p class="text-gray-600 dark:text-gray-400 text-justify indent-8">I’m a</p>
               </div>
             </div>
             <div class="sm:w-full lg:w-3/4 block justify-self-center">
@@ -1086,34 +1081,75 @@
           </div>
         </section>
 
-        <section id="blog" class="mt-4 justify-center animate-on-scroll">
+        <section id="blog" class="relative w-full min-h-[100dvh] mt-32 justify-center animate-on-scroll">
           <h2 class="text-gray-900 dark:text-gray-200 text-center md:text-2xl lg:text-4xl font-light underline underline-offset-8 decoration-1 uppercase">Personal blog</h2>
-          <div class="columns-2 sm:columns-1 md:columns-2 gap-4 mt-14 text-base text-gray-800 dark:text-gray-200">
-            <div class="justify-end">
-              <img class="rounded-full w-16 h-16" src="./img/1778170987136.jpg" alt="Luis Flores">
-            </div>
-            <div>
-              <div class="grid grid-cols-2 gap-4 border-b-1">
-                <div class="w-12">
-                  <p>Technology to use</p>
-                </div>
-                <div class="w-42">
-                  <p>CSS, SVG, HTML, JavaScript, React, PHP, <span class="text-sm">and so on...</span></p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 text-wrap">
+            <div class="mt-6 sm:w-full lg:w-3/4">
+              <div class="card-swiper">
+                <div class="card-groups">
+                  <div class="card-group" data-index="0" data-status="active">
+                    <div class="little-card card">
+                    </div>
+                    <div class="big-card card">
+                    </div>
+                    <div class="little-card card">
+                    </div>
+                    <div class="big-card card">
+                    </div>
+                    <div class="little-card card">
+                    </div>
+                    <div class="big-card card">
+                    </div>
+                    <div class="little-card card">
+                    </div>
+                    <div class="big-card card">
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <h2
-            class="md:text-4xl bg-gradient-to-tl from-white via-slate-400 to-slate-700 bg-clip-text text-transparent font-bold py-2">
-            Test text
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2">
-            <div>
-              <h3 class="text-lg font-semibold">Test text</h3>
-              <p class="text-gray-600 dark:text-gray-400">Lorem ipsum dolor mi</p>
+            <div class="sm:w-full lg:w-3/4 block justify-self-center">
+              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0">
+                <div class="w-12">
+                  <p class="font-medium text-gray-700 dark:text-gray-300">Technology to use</p>
+                </div>
+                <div class="">
+                  <p class="font-normal text-gray-600 dark:text-gray-400">CSS, SVG, HTML, JavaScript, React, PHP, <span class="text-xs">and so on...</span></p>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
+                <div class="w-12">
+                  <p class="font-medium text-gray-700 dark:text-gray-300">Design tools</p>
+                </div>
+                <div class="">
+                  <p class="font-normal text-gray-600 dark:text-gray-400">Figma, Adobe Potoshop, Adobe XD, Canva</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
+                <div class="w-12">
+                  <p class="font-medium text-gray-700 dark:text-gray-300">Primary role</p>
+                </div>
+                <div class="">
+                  <p class="text-gray-600 dark:text-gray-400">Data analyst, Front-end engineer, UI and Web Designer, Back-end engineer</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
+                <div class="w-12">
+                  <p class="font-medium text-gray-700 dark:text-gray-300">Certificates</p>
+                </div>
+                <div class="">
+                  <p class="text-gray-600 dark:text-gray-400">CSS, SVG, HTML, JavaScript, React, PHP, <span class="text-xs">and so on...</span></p>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
+                <div class="w-12">
+                  <p class="font-medium text-gray-700 dark:text-gray-300">Liked</p>
+                </div>
+                <div class="">
+                  <p class="text-gray-600 dark:text-gray-400">Web, coding, design, cats, horror games, mangas, <span class="text-xs">and so on...</span></p>
+                </div>
+              </div>
             </div>
-            <img src="./img/1778170987136.jpg"
-              class="bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 shadow-[0px_0px_90px_0px_rgba(221,_224,_226,_0.2)] hover:shadow-[0px_0px_40px_0px_rgba(221,_224,_226,_0.2)] transition-all duration-300 ease-in-out">
           </div>
         </section>
       </main>
