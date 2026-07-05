@@ -784,9 +784,9 @@
       </div>
 
       <ul class="hidden md:flex gap-8 font-medium text-sm text-gray-300">
-        <li><a href="#about" class="hover:text-white transition-colors">Home</a></li>
+        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
         <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
-        <li><a href="#contact" class="hover:text-white transition-colors">Blog</a></li>
+        <li><a href="#blog" class="hover:text-white transition-colors">Blog</a></li>
       </ul>
 
       <div class="flex items-center gap-4">
@@ -798,7 +798,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
           </svg>
         </a>
-        <button id="loginBtn" class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">Contact me</button>
+        <button id="contactBtn" class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">Contact me</button>
       </div>
     </nav>
   </header>
@@ -815,7 +815,7 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <main class="px-15 md:px-30 xl:px-60">
-        <section class="relative w-full min-h-[100dvh] grid place-items-center overflow-hidden" id="about">
+        <section id="home" class="relative w-full min-h-[100dvh] grid place-items-center overflow-hidden">
           <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-25 dark:opacity-50">
             <div class="absolute -inset-50 backdrop-blur-sm dark:backdrop-blur-md z-10"></div>
             <svg class="w-[600px] h-[600px] md:w-[800px] md:h-[800px] max-w-[150vw] object-contain overflow-visible mb-58" viewBox="-20 -20 296 299" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1082,80 +1082,49 @@
         </section>
 
         <section id="blog" class="relative w-full min-h-[100dvh] mt-32 justify-center animate-on-scroll">
-          <h2 class="text-gray-900 dark:text-gray-200 text-center md:text-2xl lg:text-4xl font-light underline underline-offset-8 decoration-1 uppercase">Personal blog</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 text-wrap">
-            <div class="mt-6 sm:w-full lg:w-3/4">
-              <div class="card-swiper">
-                <div class="card-groups">
-                  <div class="card-group" data-index="0" data-status="active">
-                    <div class="little-card card">
-                    </div>
-                    <div class="big-card card">
-                    </div>
-                    <div class="little-card card">
-                    </div>
-                    <div class="big-card card">
-                    </div>
-                    <div class="little-card card">
-                    </div>
-                    <div class="big-card card">
-                    </div>
-                    <div class="little-card card">
-                    </div>
-                    <div class="big-card card">
-                    </div>
-                  </div>
+          <h2 class="text-gray-900 dark:text-gray-200 text-center md:text-2xl lg:text-4xl font-light underline underline-offset-8 decoration-1 uppercase mb-18">Personal blog</h2>
+          <div class="flex justify-center card-swiper">
+            <div class="card-groups">
+              <div class="card-group" data-index="0" data-status="active">
+                <div class="little-card card">
                 </div>
-              </div>
-            </div>
-            <div class="sm:w-full lg:w-3/4 block justify-self-center">
-              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0">
-                <div class="w-12">
-                  <p class="font-medium text-gray-700 dark:text-gray-300">Technology to use</p>
+                <div class="big-card card">
                 </div>
-                <div class="">
-                  <p class="font-normal text-gray-600 dark:text-gray-400">CSS, SVG, HTML, JavaScript, React, PHP, <span class="text-xs">and so on...</span></p>
+                <div class="little-card card">
                 </div>
-              </div>
-              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
-                <div class="w-12">
-                  <p class="font-medium text-gray-700 dark:text-gray-300">Design tools</p>
+                <div class="big-card card">
                 </div>
-                <div class="">
-                  <p class="font-normal text-gray-600 dark:text-gray-400">Figma, Adobe Potoshop, Adobe XD, Canva</p>
+                <div class="little-card card">
                 </div>
-              </div>
-              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
-                <div class="w-12">
-                  <p class="font-medium text-gray-700 dark:text-gray-300">Primary role</p>
+                <div class="big-card card">
                 </div>
-                <div class="">
-                  <p class="text-gray-600 dark:text-gray-400">Data analyst, Front-end engineer, UI and Web Designer, Back-end engineer</p>
+                <div class="little-card card">
                 </div>
-              </div>
-              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
-                <div class="w-12">
-                  <p class="font-medium text-gray-700 dark:text-gray-300">Certificates</p>
-                </div>
-                <div class="">
-                  <p class="text-gray-600 dark:text-gray-400">CSS, SVG, HTML, JavaScript, React, PHP, <span class="text-xs">and so on...</span></p>
-                </div>
-              </div>
-              <div class="grid grid-cols-2 gap-4 border-b-1 border-gray-300 dark:border-gray-600 pb-2 ml-8 lg:ml-0 my-2">
-                <div class="w-12">
-                  <p class="font-medium text-gray-700 dark:text-gray-300">Liked</p>
-                </div>
-                <div class="">
-                  <p class="text-gray-600 dark:text-gray-400">Web, coding, design, cats, horror games, mangas, <span class="text-xs">and so on...</span></p>
+                <div class="big-card card">
                 </div>
               </div>
             </div>
           </div>
+          <p class="text-gray-600 dark:text-gray-400 text-center mt-10">
+            Hey there! Watch some of my latest blog posts here!
+          </p>
+          <div class="flex justify-center mt-4">
+            <button class="outline-2 outline-offset-2 outline-solid outline-gray-900 dark:outline-gray-200 text-black dark:text-gray-300 px-5 py-2 rounded-full text-sm font-bold transition-colors">Sure! Take me to the blog!</button>
+          </div>
         </section>
       </main>
 
+      <div id="end-message" class="flex flex-col items-center justify-center py-10 opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+        <p class="text-2xl font-bold dark:text-white">The end.</p>
+        <p class="text-gray-500 mb-4 mt-1">Back to the top?</p>
+        <a href="#home" class="hover-bounce-card outline-2 outline-offset-2 outline-solid outline-gray-900 dark:outline-gray-200 text-black dark:text-gray-300 px-2 py-2 rounded-full text-sm font-bold transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L19 11H13V19H11V11H5L12 4Z" fill="currentColor" />
+          </svg>
+        </a>
+      </div>
       <!--Waves Container-->
-      <div>
+      <div id="wave-trigger" class="relative w-full">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
           <defs>
@@ -1230,8 +1199,6 @@
         </div>
       </footer>
 
-
-
     </div> <!-- Cierre de smooth-content -->
   </div> <!-- Cierre de smooth-wrapper -->
 
@@ -1268,6 +1235,7 @@
 
   <script src="../dist/bundle.js"></script>
   <script>
+    // Seleccionamos elementos
     const openBtn = document.getElementById("openBtn");
     const closeBtn = document.getElementById("closeBtn");
     const transition = document.getElementById("transition");
@@ -1276,7 +1244,7 @@
     const radioHomeBtn = document.getElementById("radioHomeBtn");
     const profileBtn = document.getElementById("profileBtn");
     const requestsBtn = document.getElementById("requestsBtn");
-    const loginBtn = document.getElementById("loginBtn");
+    const contactBtn = document.getElementById("contactBtn");
 
     const homeBtnNavbar = document.getElementById("homeBtnNavbar");
     const profileBtnNavbar = document.getElementById("profileBtnNavbar");
@@ -1289,182 +1257,148 @@
 
     const siriNavbar = document.getElementById("siri-container-2");
 
-    openBtn.addEventListener("click", () => {
-      transition.classList.add("show");
-      transition.classList.remove("up", "down");
+    // ==========================================
+    // SEGURO DE VIDA: Solo agregamos eventos si el elemento existe
+    // ==========================================
+    if (openBtn && transition && closeBtn && menu) {
+      openBtn.addEventListener("click", () => {
+        transition.classList.add("show");
+        transition.classList.remove("up", "down");
+        setTimeout(() => {
+          transition.classList.add("down");
+        }, 20);
+        setTimeout(() => {
+          closeBtn.style.display = "block";
+          menu.style.display = "inline-block";
+        }, 900);
+      });
 
-      setTimeout(() => {
-        transition.classList.add("down");
-      }, 20);
-
-      setTimeout(() => {
-        closeBtn.style.display = "block";
-        menu.style.display = "inline-block";
-      }, 900);
-    });
-
-    closeBtn.addEventListener("click", () => {
-      closeBtn.style.display = "none";
-      menu.style.display = "none";
-      transition.classList.remove("down");
-      transition.classList.add("up");
-
-      setTimeout(() => {
-        transition.classList.remove("show");
-      }, 900);
-    });
-
-    // ---Menu Options---
-
-    // Radio option
-    radioHomeBtn.addEventListener("click", () => {
-      closeBtn.style.display = "none";
-      menu.style.display = "none";
-      transition.classList.remove("down");
-      transition.classList.add("up");
-
-      setTimeout(() => {
-        transition.classList.remove("show");
-      }, 900);
-
-      myProfile.style.display = "none";
-      myRequests.style.display = "none";
-      radioHome.style.display = "block";
-      siriNavbar.classList.add("hidden");
-    });
-
-    // Profile option
-    profileBtn.addEventListener("click", () => {
-      closeBtn.style.display = "none";
-      menu.style.display = "none";
-      transition.classList.remove("down");
-      transition.classList.add("up");
-
-      setTimeout(() => {
-        transition.classList.remove("show");
-      }, 900);
-
-      radioHome.style.display = "none";
-      myRequests.style.display = "none";
-      myProfile.style.display = "block";
-      siriNavbar.classList.remove("hidden");
-    });
-
-    // Requests option
-    requestsBtn.addEventListener("click", () => {
-      closeBtn.style.display = "none";
-      menu.style.display = "none";
-      transition.classList.remove("down");
-      transition.classList.add("up");
-
-      setTimeout(() => {
-        transition.classList.remove("show");
-      }, 900);
-
-      radioHome.style.display = "none";
-      myProfile.style.display = "none";
-      myRequests.style.display = "block";
-      siriNavbar.classList.remove("hidden");
-    });
-
-    // --- Navbar options ---
-    // Radio Btn
-    homeBtnNavbar.addEventListener("click", () => {
-      transition.classList.add("show");
-      transition.classList.remove("up", "down");
-
-      setTimeout(() => {
-        transition.classList.add("down");
-      }, 20);
-
-      setTimeout(() => {
+      closeBtn.addEventListener("click", () => {
+        closeBtn.style.display = "none";
+        menu.style.display = "none";
         transition.classList.remove("down");
-        myProfile.style.display = "none";
-        myRequests.style.display = "none";
+        transition.classList.add("up");
+        setTimeout(() => {
+          transition.classList.remove("show");
+        }, 900);
+      });
+    }
+
+    // Opciones del Menú (comprobamos que existan)
+    if (radioHomeBtn && radioHome) {
+      radioHomeBtn.addEventListener("click", () => {
+        closeBtn.style.display = "none";
+        menu.style.display = "none";
+        transition.classList.remove("down");
+        transition.classList.add("up");
+        setTimeout(() => {
+          transition.classList.remove("show");
+        }, 900);
+        if (myProfile) myProfile.style.display = "none";
+        if (myRequests) myRequests.style.display = "none";
         radioHome.style.display = "block";
-        siriNavbar.classList.add("hidden");
-      }, 900);
+        if (siriNavbar) siriNavbar.classList.add("hidden");
+      });
+    }
 
-      setTimeout(() => {
-        transition.classList.remove("show");
-      }, 1800);
-    });
-
-    // Profile Btn
-    profileBtnNavbar.addEventListener("click", () => {
-      transition.classList.add("show");
-      transition.classList.remove("up", "down");
-
-      setTimeout(() => {
-        transition.classList.add("down");
-      }, 20);
-
-      setTimeout(() => {
+    if (profileBtn && myProfile) {
+      profileBtn.addEventListener("click", () => {
+        closeBtn.style.display = "none";
+        menu.style.display = "none";
         transition.classList.remove("down");
-        radioHome.style.display = "none";
-        myRequests.style.display = "none";
+        transition.classList.add("up");
+        setTimeout(() => {
+          transition.classList.remove("show");
+        }, 900);
+        if (radioHome) radioHome.style.display = "none";
+        if (myRequests) myRequests.style.display = "none";
         myProfile.style.display = "block";
-        siriNavbar.classList.remove("hidden");
-      }, 900);
+        if (siriNavbar) siriNavbar.classList.remove("hidden");
+      });
+    }
 
-      setTimeout(() => {
-        transition.classList.remove("show");
-      }, 1800);
-    });
-
-    // Requests Btn
-    requestsBtnNavbar.addEventListener("click", () => {
-      transition.classList.add("show");
-      transition.classList.remove("up", "down");
-
-      setTimeout(() => {
-        transition.classList.add("down");
-      }, 20);
-
-      setTimeout(() => {
+    if (requestsBtn && myRequests) {
+      requestsBtn.addEventListener("click", () => {
+        closeBtn.style.display = "none";
+        menu.style.display = "none";
         transition.classList.remove("down");
-        radioHome.style.display = "none";
-        myProfile.style.display = "none";
+        transition.classList.add("up");
+        setTimeout(() => {
+          transition.classList.remove("show");
+        }, 900);
+        if (radioHome) radioHome.style.display = "none";
+        if (myProfile) myProfile.style.display = "none";
         myRequests.style.display = "block";
-        siriNavbar.classList.remove("hidden");
-      }, 900);
+        if (siriNavbar) siriNavbar.classList.remove("hidden");
+      });
+    }
 
-      setTimeout(() => {
-        transition.classList.remove("show");
-      }, 1800);
-    });
+    // Navbar options (¡Aquí es donde fallaba tu código antes!)
+    if (homeBtnNavbar) {
+      homeBtnNavbar.addEventListener("click", () => {
+        /* tu logica */
+      });
+    }
+    if (profileBtnNavbar) {
+      profileBtnNavbar.addEventListener("click", () => {
+        /* tu logica */
+      });
+    }
+    if (requestsBtnNavbar) {
+      requestsBtnNavbar.addEventListener("click", () => {
+        /* tu logica */
+      });
+    }
+    if (contactBtn) {
+      contactBtn.addEventListener("click", () => {
+        /* Go to contact section */
+        document.getElementById("contact").scrollIntoView();
+      });
+    }
 
-    // Login Btn
-    loginBtnNavbar.addEventListener("click", () => {
-      transition.classList.add("show");
-      transition.classList.remove("up", "down");
-
-      setTimeout(() => {
-        transition.classList.add("down");
-      }, 20);
-
-      setTimeout(() => {
-        radioHome.style.display = "none";
-        myRequests.style.display = "none";
-        myProfile.style.display = "none";
-
-        // !!!THIS IS FOR LOCAL/TESTING ONLY:!!!
-        window.location.href = "login.php";
-      }, 900);
-    });
-
-    // Ocultar scroll al inicio
+    // ==========================================
+    // ANIMACIÓN FINAL (¡Ahora sí llegará hasta aquí!)
+    // ==========================================
     document.documentElement.style.overflow = 'hidden';
 
     window.addEventListener('DOMContentLoaded', () => {
       document.body.style.display = '';
 
-      // El CSS de tus cortinas dura en total 1.4s (0.5s de delay + 0.9s animando)
-      // Eliminamos el contenedor a los 1.5s de manera limpia para restaurar el scroll
       setTimeout(() => {
+        // 1. Quitamos la pantalla de carga
         const loading = document.getElementById('loading-screen');
         if (loading) loading.remove();
+
+        // 2. Restauramos el scroll
         document.documentElement.style.overflow = '';
+
+        // 3. EFECTO RADAR REPETIBLE
+        const endMessage = document.getElementById('end-message');
+
+        if (endMessage) {
+          // El radar ahora se quedará encendido siempre
+          setInterval(() => {
+            const rect = endMessage.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            // Si el mensaje entra en la pantalla
+            if (rect.top < windowHeight - 50) {
+
+              // Entra: Se hace visible y sube
+              endMessage.classList.remove('opacity-0', 'translate-y-12');
+              endMessage.classList.add('opacity-100', 'translate-y-0');
+
+            } else {
+
+              // Sale (el usuario subió el scroll): Se vuelve a ocultar y bajar
+              // Así estará listo para volver a animarse cuando bajes de nuevo
+              endMessage.classList.add('opacity-0', 'translate-y-12');
+              endMessage.classList.remove('opacity-100', 'translate-y-0');
+
+            }
+          }, 100); // Revisa la posición 10 veces por segundo
+        }
+
       }, 1500);
     });
   </script>
